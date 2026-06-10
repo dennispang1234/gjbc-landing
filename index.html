@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Good Juju Barbell Club — More Than Just a Gym | Kuala Lumpur</title>
+<meta name="description" content="Kuala Lumpur's friendliest strength club. World-class coaching in a room full of people rooting for you. New to lifting? Book your FREE consult + movement assessment." />
+
+<meta property="og:title" content="Good Juju Barbell Club — More Than Just a Gym" />
+<meta property="og:description" content="New to strength training? Book a free consult + movement assessment in Bukit Damansara, KL. World-class coaching, zero intimidation." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/gjbc-hero.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Dela Gothic One = GJBC heading font. Archivo = closest free DIN-Alternate substitute (real DIN Alternate used where installed). -->
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    /* ---- Good Juju brand primitives (pulled from live site) ---- */
+    --bg:#fff9ea;          /* signature warm cream background */
+    --juju:#fce9c9;        /* soft cream panel */
+    --sun:#e7ba06;         /* primary gold accent */
+    --clover:#156837;      /* deep green */
+    --good:#0e899b;        /* teal */
+    --lucky:#c5718b;       /* dusty rose */
+    --latte:#c49974;       /* warm tan */
+    --dark:#212121;        /* ink / text */
+    --white:#ffffff;
+    --neutral:#666;
+    --line:rgba(33,33,33,.12);
+
+    --radius:20px;
+    --maxw:1140px;
+    --shadow:5px 5px 0 var(--dark);     /* chunky sticker shadow */
+    --shadow-sm:3px 3px 0 var(--dark);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DIN Alternate','Archivo',Verdana,sans-serif;
+    background:var(--bg);color:var(--dark);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3,.disp{font-family:'Dela Gothic One',Impact,sans-serif;font-weight:400;letter-spacing:-.5px;line-height:1.08}
+
+  /* ---------- Buttons (chunky, bordered) ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;justify-content:center;
+    font-family:'Archivo',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.2px;
+    padding:15px 26px;border-radius:999px;cursor:pointer;
+    border:2.5px solid var(--dark);transition:transform .12s ease, box-shadow .12s ease;
+    line-height:1;text-align:center;
+  }
+  .btn-primary{background:var(--sun);color:var(--dark);box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--dark)}
+  .btn-primary:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--dark)}
+  .btn-wa{background:var(--clover);color:#fff;box-shadow:var(--shadow)}
+  .btn-wa:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--dark)}
+  .btn-ghost{background:transparent;color:var(--dark);box-shadow:none}
+  .btn-ghost:hover{background:var(--white)}
+  .btn-block{width:100%}
+
+  /* ---------- Nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,249,234,.9);backdrop-filter:blur(10px);border-bottom:2.5px solid var(--dark)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{width:46px;height:46px;border-radius:11px;border:2.5px solid var(--dark);background:var(--white)}
+  .brand .txt{font-family:'Dela Gothic One',sans-serif;font-size:1.02rem;line-height:1.05}
+  .brand .txt small{display:block;font-family:'Archivo',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:2.5px;color:var(--neutral);text-transform:uppercase;margin-top:3px}
+  .nav-links{display:flex;gap:24px;align-items:center;font-weight:700;font-size:.94rem}
+  .nav-links a:hover{color:var(--good)}
+  .nav .btn{padding:11px 19px;font-size:.9rem}
+  @media(max-width:920px){.nav-links{display:none}.brand .txt small{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 56px;position:relative}
+  .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+  @media(max-width:920px){.hero .wrap{grid-template-columns:1fr;gap:30px}.hero{padding:40px 0 34px}}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.8rem;letter-spacing:.5px;text-transform:uppercase;background:var(--lucky);color:#fff;padding:8px 15px;border-radius:999px;border:2.5px solid var(--dark);box-shadow:var(--shadow-sm);margin-bottom:22px}
+  h1{font-size:3.5rem}
+  h1 .u{background:linear-gradient(180deg,transparent 62%,var(--sun) 62% 92%,transparent 92%)}
+  @media(max-width:920px){h1{font-size:2.5rem}}
+  .lede{font-size:1.16rem;margin:22px 0 30px;max-width:540px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-sub{margin-top:20px;font-size:.92rem;font-weight:600;display:flex;align-items:center;gap:9px;color:var(--neutral)}
+  .hero-sub .dot{width:9px;height:9px;border-radius:50%;background:var(--clover)}
+  .hero-media{position:relative}
+  .hero-media .photo{border:3px solid var(--dark);border-radius:var(--radius);box-shadow:8px 8px 0 var(--dark);width:100%;aspect-ratio:4/4.6;object-fit:cover;background:var(--juju)}
+  .hero-media .tag{position:absolute;font-family:'Dela Gothic One',sans-serif;font-size:.82rem;background:var(--good);color:#fff;padding:10px 15px;border-radius:14px;border:2.5px solid var(--dark);box-shadow:var(--shadow-sm)}
+  .hero-media .tag.t1{bottom:18px;left:-14px;background:var(--sun);color:var(--dark)}
+  .hero-media .tag.t2{top:18px;right:-12px;background:var(--good)}
+  @media(max-width:920px){.hero-media .tag{display:none}}
+
+  /* ---------- Marquee trust ---------- */
+  .trust{background:var(--dark);color:var(--bg);border-top:2.5px solid var(--dark);border-bottom:2.5px solid var(--dark)}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:14px 38px;justify-content:center;padding:18px 22px;font-family:'Dela Gothic One',sans-serif;font-size:.95rem}
+  .trust span{display:inline-flex;align-items:center;gap:9px}
+  .trust .s{color:var(--sun)}
+
+  /* ---------- Section scaffold ---------- */
+  .sec{padding:80px 0}
+  @media(max-width:920px){.sec{padding:54px 0}}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 48px}
+  .kicker{display:inline-block;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;color:var(--good);background:var(--white);border:2px solid var(--dark);padding:5px 13px;border-radius:999px;margin-bottom:16px}
+  .sec-head h2{font-size:2.5rem}
+  @media(max-width:920px){.sec-head h2{font-size:1.85rem}}
+  .sec-head p{font-size:1.1rem;margin-top:14px;color:var(--neutral)}
+
+  /* ---------- More than a gym (split) ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.split{grid-template-columns:1fr}}
+  .panel{border:2.5px solid var(--dark);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+  .panel.before{background:var(--white)}
+  .panel.after{background:var(--juju)}
+  .panel h4{font-size:1.15rem;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .panel ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .panel li{display:flex;gap:12px;font-size:1.02rem;align-items:flex-start}
+  .mk{flex:none;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-weight:900;font-size:.8rem;border:2px solid var(--dark);margin-top:2px}
+  .before .mk{background:#fff;color:var(--lucky)}
+  .after .mk{background:var(--sun);color:var(--dark)}
+
+  /* ---------- Services / pricing ---------- */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.grid3{grid-template-columns:1fr}}
+  .svc{border:2.5px solid var(--dark);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);background:var(--white);display:flex;flex-direction:column}
+  .svc .top{height:7px;border-radius:99px;margin:-28px -28px 22px;border-bottom:2.5px solid var(--dark)}
+  .svc.c1 .top{background:var(--good)}
+  .svc.c2 .top{background:var(--lucky)}
+  .svc.c3 .top{background:var(--latte)}
+  .svc h4{font-size:1.4rem;margin-bottom:8px}
+  .svc .desc{color:var(--neutral);font-size:1rem;margin-bottom:20px;flex:1}
+  .svc .price{font-family:'Dela Gothic One',sans-serif;font-size:1.7rem}
+  .svc .price small{font-family:'Archivo',sans-serif;font-weight:700;font-size:.85rem;color:var(--neutral)}
+  .svc .note{font-size:.78rem;color:var(--neutral);margin-top:4px}
+
+  /* ---------- Feature chips ---------- */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:920px){.grid4{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid4{grid-template-columns:1fr}}
+  .feat{background:var(--white);border:2.5px solid var(--dark);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm)}
+  .feat .ic{width:50px;height:50px;border-radius:13px;border:2.5px solid var(--dark);display:grid;place-items:center;font-size:1.5rem;margin-bottom:14px}
+  .feat:nth-child(1) .ic{background:var(--sun)}
+  .feat:nth-child(2) .ic{background:var(--good)}
+  .feat:nth-child(3) .ic{background:var(--lucky)}
+  .feat:nth-child(4) .ic{background:var(--latte)}
+  .feat h4{font-size:1.1rem;margin-bottom:6px}
+  .feat p{color:var(--neutral);font-size:.95rem}
+
+  /* ---------- Steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--white);border:2.5px solid var(--dark);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow)}
+  .step .n{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-family:'Dela Gothic One',sans-serif;font-size:1.2rem;color:var(--dark);background:var(--sun);border:2.5px solid var(--dark);margin-bottom:16px}
+  .step h4{font-size:1.2rem;margin-bottom:8px}
+  .step p{color:var(--neutral);font-size:.97rem}
+
+  /* ---------- Testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.quotes{grid-template-columns:1fr}}
+  .quote{background:var(--juju);border:2.5px solid var(--dark);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
+  .quote .stars{letter-spacing:2px;margin-bottom:12px;font-size:1.05rem}
+  .quote p{font-size:1.02rem;margin-bottom:16px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{width:42px;height:42px;border-radius:50%;border:2.5px solid var(--dark);display:grid;place-items:center;font-family:'Dela Gothic One',sans-serif;flex:none}
+  .quote:nth-child(1) .av{background:var(--good);color:#fff}
+  .quote:nth-child(2) .av{background:var(--lucky);color:#fff}
+  .quote:nth-child(3) .av{background:var(--sun)}
+  .quote .who b{display:block;font-size:.95rem}
+  .quote .who span{font-size:.8rem;color:var(--neutral)}
+  .ph-note{text-align:center;color:var(--neutral);font-size:.84rem;margin-top:24px;font-style:italic}
+
+  /* ---------- Form section ---------- */
+  .book{background:var(--good);border-top:2.5px solid var(--dark);border-bottom:2.5px solid var(--dark)}
+  .book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:74px 22px}
+  @media(max-width:880px){.book .wrap{grid-template-columns:1fr;gap:32px;padding:50px 22px}}
+  .book .copy{color:#fff}
+  .book .copy h2{font-size:2.5rem;color:#fff}
+  @media(max-width:920px){.book .copy h2{font-size:1.9rem}}
+  .book .copy p{font-size:1.12rem;margin:16px 0 22px;color:rgba(255,255,255,.92)}
+  .book .copy ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-weight:600}
+  .book .copy li{display:flex;gap:10px;align-items:center}
+  .book .copy li .c{width:24px;height:24px;border-radius:7px;background:var(--sun);color:var(--dark);border:2px solid var(--dark);display:grid;place-items:center;font-weight:900;font-size:.8rem;flex:none}
+  .form-card{background:var(--bg);border:3px solid var(--dark);border-radius:var(--radius);padding:30px 28px;box-shadow:8px 8px 0 var(--dark)}
+  .form-card h3{font-size:1.45rem}
+  .price-strip{display:flex;align-items:baseline;gap:10px;margin:8px 0 20px}
+  .price-strip .free{font-family:'Dela Gothic One',sans-serif;font-size:1.2rem;color:var(--clover)}
+  .price-strip .was{font-size:.95rem;color:var(--neutral);text-decoration:line-through}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.8rem;font-weight:800;margin-bottom:6px;letter-spacing:.3px}
+  .field input,.field select{width:100%;background:var(--white);border:2.5px solid var(--dark);color:var(--dark);padding:13px 14px;border-radius:12px;font-size:1rem;font-family:inherit}
+  .field input:focus,.field select:focus{outline:none;box-shadow:var(--shadow-sm)}
+  .form-note{font-size:.78rem;color:var(--neutral);text-align:center;margin-top:12px}
+  .form-success{display:none;text-align:center;padding:24px 6px}
+  .form-success .check{font-size:2.8rem}
+  .form-success h3{margin:8px 0;color:var(--clover)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:13px}
+  .faq details{background:var(--white);border:2.5px solid var(--dark);border-radius:14px;padding:4px 22px;box-shadow:var(--shadow-sm)}
+  .faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:'Dela Gothic One',sans-serif;font-size:1.3rem;color:var(--good);transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq p{color:var(--neutral);padding:0 0 18px;font-size:.98rem}
+
+  /* ---------- Final CTA ---------- */
+  .final{background:var(--sun);border-top:2.5px solid var(--dark);text-align:center;padding:84px 0}
+  .final h2{font-size:2.7rem;max-width:780px;margin:0 auto 14px}
+  @media(max-width:920px){.final h2{font-size:1.95rem}}
+  .final p{font-size:1.14rem;max-width:560px;margin:0 auto 28px;font-weight:600}
+  .final .hero-cta{justify-content:center}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--dark);color:var(--bg);padding:50px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:26px}}
+  footer .brand .txt{color:var(--bg)}
+  footer .brand img{background:var(--bg)}
+  footer h5{font-family:'Dela Gothic One',sans-serif;font-size:.95rem;margin:6px 0 14px;color:var(--sun)}
+  footer a,footer p{color:rgba(255,249,234,.82);font-size:.93rem;line-height:1.9}
+  footer a:hover{color:var(--sun)}
+  .foot-bottom{border-top:1px solid rgba(255,249,234,.18);margin-top:36px;padding-top:20px;font-size:.82rem;color:rgba(255,249,234,.6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ---------- Sticky mobile CTA ---------- */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;padding:11px 14px;background:var(--bg);border-top:2.5px solid var(--dark);gap:10px}
+  .sticky-cta .btn{flex:1;padding:14px 12px;font-size:.92rem}
+  @media(max-width:920px){.sticky-cta{display:flex}body{padding-bottom:80px}}
+</style>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<header class="nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <img src="assets/gjbc-logo.png" alt="Good Juju Barbell Club logo" />
+      <span class="txt">Good Juju<small>Barbell Club · KL</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#why">Why us</a>
+      <a href="#services">Training</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#book" class="btn btn-primary">Book Free Assessment</a>
+  </div>
+</header>
+
+<!-- ======= HERO ======= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="pill">✨ 1-on-1 coaching for people who feel gyms aren't "for them"</span>
+      <h1>You've felt out of place in a gym before. <span class="u">Not here.</span></h1>
+      <p class="lede">
+        If you've ever stood frozen between the machines, copied a stranger's form, and left
+        feeling smaller than when you walked in — we see you. Good Juju is private 1-on-1
+        strength coaching in KL, built entirely around <b>you</b>: your body, your pace, your goals.
+        From your very first rep, someone's in your corner.
+      </p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-primary">Book My Free Assessment →</a>
+        <a href="https://wa.me/60143000522?text=Hi%20Good%20Juju!%20I'd%20like%20to%20book%20a%20free%20consult%20%2B%20movement%20assessment." class="btn btn-wa" target="_blank" rel="noopener">💬 Talk to us on WhatsApp</a>
+      </div>
+      <div class="hero-sub"><span class="dot"></span> A coach in your corner · Built around you · No experience needed</div>
+    </div>
+
+    <div class="hero-media">
+      <img class="photo" src="assets/gjbc-hero.webp" alt="Coached strength training at Good Juju Barbell Club, Kuala Lumpur" />
+      <span class="tag t1">A coach in your corner 💪</span>
+      <span class="tag t2">No judgement, ever 🤍</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TRUST MARQUEE ======= -->
+<section class="trust">
+  <div class="wrap">
+    <span><span class="s">●</span> Private 1-on-1 coaching</span>
+    <span><span class="s">●</span> A plan built only for you</span>
+    <span><span class="s">●</span> Zero experience needed</span>
+    <span><span class="s">●</span> Bukit Damansara, KL</span>
+    <span><span class="s">●</span> A coach who knows your name</span>
+  </div>
+</section>
+
+<!-- ======= WE SEE YOU (empathy / inner voice) ======= -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">We see you</span>
+      <h2>If you've ever thought any of this — you're exactly who we coach.</h2>
+      <p>Almost every 1-on-1 member walked in feeling the same way: nervous, unsure, convinced everyone else had it figured out. They didn't. They just found a coach who started where <b>they</b> were.</p>
+    </div>
+    <div class="grid4">
+      <div class="feat">
+        <div class="ic">😶</div>
+        <h4>"I don't even know where to start."</h4>
+        <p>Perfect. We assume zero. Your coach explains every movement, every rep — slowly, patiently — until it finally feels like yours.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">😰</div>
+        <h4>"What if I hurt myself?"</h4>
+        <p>Every rep is watched and coached, and your plan is built around your body — old injuries and all. Physio is right here if you ever need it.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">😞</div>
+        <h4>"I've started before… and quit."</h4>
+        <p>This time you're not doing it alone. A coach who knows your name, remembers your goals, and notices the weeks you don't show up.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">⏳</div>
+        <h4>"I feel too unfit / too late to begin."</h4>
+        <p>There's no "fit enough to start" here. The only starting line that matters is the one you're standing on today. We'll meet you on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 1-ON-1 COACHING (PT focus) ======= -->
+<section class="sec" id="services" style="background:var(--juju);border-top:2.5px solid var(--dark);border-bottom:2.5px solid var(--dark)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">1-on-1 coaching</span>
+      <h2>Coaching built around you — not a class you scramble to keep up with.</h2>
+      <p>One coach. One plan. Your pace. This is private personal training designed to make a complete beginner feel capable, safe, and genuinely seen — every single session.</p>
+    </div>
+    <div class="split">
+      <div class="panel after">
+        <h4>✨ What your coaching feels like</h4>
+        <ul>
+          <li><span class="mk">✓</span><span>A coach who learns <b>your body, your history, and your goals</b> — not a template.</span></li>
+          <li><span class="mk">✓</span><span>A plan written <b>only for you</b>, adjusted as you grow stronger.</span></li>
+          <li><span class="mk">✓</span><span>Technique coached <b>rep by rep</b>, so you train safely and confidently.</span></li>
+          <li><span class="mk">✓</span><span>Someone who <b>notices, encourages, and keeps you going</b> when motivation dips.</span></li>
+          <li><span class="mk">✓</span><span>Progress you can <b>actually see and feel</b> — and physio on-site if your body ever needs it.</span></li>
+        </ul>
+      </div>
+      <div class="svc c1" style="justify-content:flex-start">
+        <div class="top"></div>
+        <h4>1-on-1 Personal Training</h4>
+        <p class="desc">A dedicated coach, a plan built only for you, and someone in your corner from your very first rep.</p>
+        <div class="price">from RM145 <small>/ session</small></div>
+        <div class="note">*Indicative rate — packages available. Always starts with a free assessment.</div>
+        <a href="#book" class="btn btn-primary btn-block" style="margin-top:20px">Book My Free Assessment →</a>
+        <p style="font-size:.82rem;color:var(--neutral);text-align:center;margin-top:14px">Prefer to train with a friend, or need physio? We do that too — just ask at your assessment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FEATURES ======= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Where this goes</span>
+      <h2>Six months from now, you could be the person you keep meaning to become.</h2>
+      <p>This isn't about a beach body by Friday. It's about quietly becoming someone stronger — in your body, and in how you feel about yourself.</p>
+    </div>
+    <div class="grid4">
+      <div class="feat"><div class="ic">💪</div><h4>Strong in real life</h4><p>Carrying the groceries, keeping up with your kids, lifting things that used to feel impossible — without a second thought.</p></div>
+      <div class="feat"><div class="ic">🧠</div><h4>Confident in your skin</h4><p>The dread fades. You stop avoiding the gym and start looking forward to it — because it's finally yours.</p></div>
+      <div class="feat"><div class="ic">🛡️</div><h4>Pain-free &amp; resilient</h4><p>Old aches quieten down. You move better at work, in sport, and on the days life asks a lot of you.</p></div>
+      <div class="feat"><div class="ic">✨</div><h4>Finally consistent</h4><p>Not through willpower — through having someone who expects you, believes in you, and won't let you disappear.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= HOW IT WORKS ======= -->
+<section class="sec" id="how" style="background:var(--juju);border-top:2.5px solid var(--dark);border-bottom:2.5px solid var(--dark)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">How it works</span>
+      <h2>From nervous beginner to confident lifter — in 3 steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Book your free assessment</h4><p>Fill in the 30-second form or WhatsApp us. We'll lock in a time that suits you — no payment, no commitment.</p></div>
+      <div class="step"><div class="n">2</div><h4>Meet your coach &amp; move</h4><p>A relaxed chat plus a simple movement screen. We learn your goals, see how you move, and map your safest, fastest path.</p></div>
+      <div class="step"><div class="n">3</div><h4>Start getting strong</h4><p>Begin coached training that fits your body and schedule. Feel the difference in your strength, energy, and confidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TESTIMONIALS ======= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">You're not the first</span>
+      <h2>They felt exactly like you do now — until they didn't.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote"><div class="stars">⭐⭐⭐⭐⭐</div><p>"I almost didn't walk in. I was sure I'd be the unfittest person there. Instead my coach just… met me where I was. Six months on, I deadlift my bodyweight and my back pain is gone."</p><div class="who"><span class="av">P</span><div><b>Placeholder — Priya</b><span>Started as a complete beginner</span></div></div></div>
+      <div class="quote"><div class="stars">⭐⭐⭐⭐⭐</div><p>"At 43, behind a desk all day, I was terrified of getting hurt. My coach built everything around my dodgy shoulder. For the first time, I actually feel strong — not scared."</p><div class="who"><span class="av">M</span><div><b>Placeholder — Marcus</b><span>Busy professional</span></div></div></div>
+      <div class="quote"><div class="stars">⭐⭐⭐⭐⭐</div><p>"I've quit every gym I've joined. This is the first place where someone noticed when I went quiet and checked in. That's what kept me coming back."</p><div class="who"><span class="av">L</span><div><b>Placeholder — Lina</b><span>1-on-1 member · KL</span></div></div></div>
+    </div>
+    <p class="ph-note">↑ Replace with 3 REAL 1-on-1 client quotes (first name + the feeling/result). Lead each with the emotion they walked in with. ⚠️ Competitor MOVE shows "5.0 from 207 Google reviews" up top — add your real Google rating here too; it's their single biggest proof point.</p>
+  </div>
+</section>
+
+<!-- ======= BOOK / LEAD FORM ======= -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="copy">
+      <span class="kicker" style="color:var(--dark);background:var(--sun)">Free · No pressure · No workout</span>
+      <h2>Your first step is just a conversation.</h2>
+      <p>No being put through your paces. No sweating in front of strangers. Just a <b>free consult + movement assessment</b> where a coach listens to where you're starting from — and shows you the way forward, whether or not you join.</p>
+      <ul>
+        <li><span class="c">✓</span> A real conversation about what you actually want</li>
+        <li><span class="c">✓</span> A gentle movement screen — no fitness test, we promise</li>
+        <li><span class="c">✓</span> A clear, honest plan for your safest first steps</li>
+        <li><span class="c">✓</span> Worth RM150 — yours free, no strings</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <form id="leadForm">
+        <h3>Book Your Free Assessment</h3>
+        <div class="price-strip"><span class="free">RM 0 — Free</span><span class="was">Usually RM150</span></div>
+        <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" placeholder="e.g. Aisha Tan" required /></div>
+        <div class="field"><label for="phone">WhatsApp number</label><input id="phone" name="phone" type="tel" placeholder="e.g. 012-345 6789" required /></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required /></div>
+        <div class="field"><label for="goal">Your main goal</label>
+          <select id="goal" name="goal" required>
+            <option value="" disabled selected>Choose one…</option>
+            <option>Get stronger &amp; build muscle</option>
+            <option>Lose weight / get fitter</option>
+            <option>Train around an injury or pain</option>
+            <option>Learn to lift properly (beginner)</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Get My Free Assessment →</button>
+        <p class="form-note">🔒 Takes 30 seconds. We'll WhatsApp you to confirm a time. No obligation, no pressure.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✅</div>
+        <h3>You're in!</h3>
+        <p style="color:var(--neutral)">Thanks — our team will WhatsApp you shortly to lock in your free consult &amp; movement assessment. See you soon! ✨</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Questions</span>
+      <h2>Everything you're wondering, answered.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>I've literally never trained before. Is this really for me?</summary>
+        <p>100%. Good Juju is <b>built for beginners</b>. Most of our members started exactly where you are — nervous and unsure. Your coach starts from the very basics and progresses at your pace. There's no such thing as being "too unfit to start."</p>
+      </details>
+      <details>
+        <summary>What actually happens at the free assessment?</summary>
+        <p>A friendly, no-pressure chat about your goals, plus a simple movement screen so we understand how your body moves. You'll leave knowing exactly how we can help — whether or not you decide to join. It's genuinely free.</p>
+      </details>
+      <details>
+        <summary>I have an old injury / back pain. Can I still train?</summary>
+        <p>Often, training is exactly what helps. With physiotherapy on-site, we build a plan <b>around</b> your body so you get stronger safely. Many members come to us specifically to move pain-free again.</p>
+      </details>
+      <details>
+        <summary>Will I be lifting in front of a big crowd?</summary>
+        <p>No. We focus on private and small-group coaching — calm, focused, and supportive. No packed floors, no waiting for machines, no judgement.</p>
+      </details>
+      <details>
+        <summary>Where are you located?</summary>
+        <p>L1-13, Level 1, DC Mall, 6 Jalan Damanlela, Bukit Damansara, 50490 Kuala Lumpur. Easy to reach before work, at lunch, or after.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FINAL CTA ======= -->
+<section class="final">
+  <div class="wrap">
+    <h2>You've thought about starting for long enough. Let's take the first step — together.</h2>
+    <p>Book your free consult + movement assessment. No pressure, no obligation — just a coach ready to listen. It takes 30 seconds.</p>
+    <div class="hero-cta">
+      <a href="#book" class="btn btn-primary" style="background:var(--white)">Book My Free Assessment →</a>
+      <a href="https://wa.me/60143000522?text=Hi%20Good%20Juju!%20I'd%20like%20to%20book%20a%20free%20consult%20%2B%20movement%20assessment." class="btn btn-wa" target="_blank" rel="noopener">💬 Or WhatsApp us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:14px">
+          <img src="assets/gjbc-logo.png" alt="GJBC logo" />
+          <span class="txt">Good Juju<small style="color:rgba(255,249,234,.6)">Barbell Club</small></span>
+        </a>
+        <p>More than just a gym. World-class coaching in a room full of people rooting for you — in the heart of Bukit Damansara, KL.</p>
+      </div>
+      <div>
+        <h5>Visit us</h5>
+        <p>L1-13, Level 1, DC Mall,<br />6 Jalan Damanlela, Bukit Damansara,<br />50490 Kuala Lumpur, Malaysia</p>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <p>
+          <a href="https://wa.me/60143000522" target="_blank" rel="noopener">WhatsApp: +6014 300 0522</a><br />
+          <a href="mailto:aloha@heygoodjuju.com">aloha@heygoodjuju.com</a><br />
+          <a href="https://instagram.com/goodjujubarbellclub" target="_blank" rel="noopener">Instagram: @goodjujubarbellclub</a>
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> GJBC Sdn Bhd (1446054-U). All rights reserved.</span>
+      <span>Good Juju Co. · Barbell Club · Physio · Kopi · Store · Academy</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======= STICKY MOBILE CTA ======= -->
+<div class="sticky-cta">
+  <a href="#book" class="btn btn-primary">Free Assessment</a>
+  <a href="https://wa.me/60143000522?text=Hi%20Good%20Juju!%20I'd%20like%20to%20book%20a%20free%20assessment." class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('leadForm');
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.source = 'landing.html';
+    data.submitted_at = new Date().toISOString();
+
+    /* ------------------------------------------------------------------
+       TODO (Dennis): wire this to your lead pipeline. Easiest options:
+       1) A Make.com / Zapier webhook that creates a Notion PT-lead row.
+       2) A small Flask route in server.py (e.g. POST /api/lead).
+       Example:
+         await fetch('/api/lead', {
+           method:'POST', headers:{'Content-Type':'application/json'},
+           body: JSON.stringify(data)
+         });
+    ------------------------------------------------------------------- */
+    console.log('Lead captured →', data); // remove once wired
+
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
