@@ -16,6 +16,19 @@ This deploys as a **static site** — no build step, no framework.
 3. Framework preset: **Other** (static). Leave build/output empty. Deploy.
 4. Every branch/PR gets its own preview URL; `main` is production.
 
+## Lead form
+
+The form posts to `/api/lead` (Vercel serverless function, `api/lead.js`), which
+creates a lead in the Notion "📏 PT Lead Tracker 2.0" database (the same pipeline
+the dashboard reads). New leads land as **Follow-Up Stage: Pending**, **Qualified?:
+Needs Review**, with the goal captured in Notes.
+
+**Required env var (Vercel → Project → Settings → Environment Variables):**
+- `NOTION_TOKEN` — a Notion integration token that has access to the PT Lead
+  Tracker 2.0 database (insert capability). Same token the dashboard uses.
+
+If the env var is missing, the form shows a friendly error with a WhatsApp fallback.
+
 ## Going live
 
 When ready for the public, remove the `X-Robots-Tag: noindex` header in `vercel.json`
